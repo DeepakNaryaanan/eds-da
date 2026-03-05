@@ -250,16 +250,15 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 280px;
   padding: 48px 32px;
-  text-align: center;
+  text-align: left;
 }
 
 .hero.split .hero-foreground .fg-text {
   width: 100%;
-  max-width: 480px;
-  margin: 0 auto;
+  max-width: 520px;
 }
 
 .hero.split.teal .hero-foreground {
@@ -288,10 +287,11 @@
     flex: 0 0 50%;
     width: 50%;
     display: flex;
+    align-items: center;
     max-width: unset;
     margin: 0;
     grid-template-columns: unset;
-    padding: 48px;
+    padding: 48px 64px;
   }
 
   .hero.split.reverse {
