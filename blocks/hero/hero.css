@@ -223,3 +223,78 @@
     }
   }
 }
+
+/* Split variant — 50/50 image + solid-color text layout */
+.hero.split {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero.split .hero-background {
+  position: relative;
+}
+
+.hero.split .hero-background > div {
+  position: relative;
+  inset: unset;
+}
+
+.hero.split .hero-background picture {
+  position: relative;
+  inset: unset;
+  display: block;
+}
+
+.hero.split .hero-foreground {
+  background: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.hero.split .hero-foreground .fg-text {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.hero.split.teal .hero-foreground {
+  background-color: rgb(25 110 128);
+}
+
+.hero.split.red .hero-foreground {
+  background-color: rgb(204 62 68);
+}
+
+@media (width >= 600px) {
+  .hero.split {
+    flex-direction: row;
+  }
+
+  .hero.split .hero-background {
+    flex: 0 0 50%;
+    width: 50%;
+  }
+
+  .hero.split .hero-background picture {
+    height: 100%;
+  }
+
+  .hero.split .hero-foreground {
+    flex: 0 0 50%;
+    width: 50%;
+    display: flex;
+    max-width: unset;
+    margin: 0;
+    grid-template-columns: unset;
+    padding: 48px;
+  }
+
+  .hero.split.reverse {
+    flex-direction: row-reverse;
+  }
+}
