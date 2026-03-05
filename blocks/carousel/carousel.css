@@ -25,11 +25,11 @@
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   position: relative;
   width: 100%;
-  min-height: min(50vw, calc(100dvh - var(--header-height)));
+  min-height: 350px;
 }
 
 .carousel .carousel-slide:has(.carousel-slide-content[data-align='center']) {
@@ -40,25 +40,26 @@
   align-items: flex-end;
 }
 
+.carousel .carousel-slide .carousel-slide-image {
+  display: flex;
+  justify-content: center;
+  padding-top: 32px;
+}
+
 .carousel .carousel-slide .carousel-slide-image picture {
-  position: absolute;
-  inset: 0;
+  position: static;
 }
 
 .carousel .carousel-slide .carousel-slide-image picture > img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+  width: auto;
+  height: auto;
+  max-height: 140px;
+  object-fit: contain;
 }
 
 .carousel .carousel-slide .carousel-slide-content {
-  z-index: 1;
-  margin: 68px;
-  padding: 24px 32px;
+  padding: 16px 32px;
   color: white;
-  background-color: var(--color-fresenius-navy, #071b45);
-  position: relative;
-  width: var(--slide-content-width, auto);
   text-align: center;
 }
 
@@ -68,24 +69,24 @@
   justify-content: center;
   gap: 6px 12px;
   padding: 12px;
-  background-color: var(--light-color);
   line-height: 0;
 }
 
 .carousel .carousel-slide-indicator button {
-  width: 24px;
-  height: 24px;
+  width: 12px;
+  height: 12px;
   margin: 0;
   padding: 0;
   border-radius: 50%;
-  background-color: #dadada;
+  background-color: rgb(255 255 255 / 40%);
+  border: none;
   transition: background-color 0.2s;
 }
 
 .carousel .carousel-slide-indicator button:disabled,
 .carousel .carousel-slide-indicator button:hover,
 .carousel .carousel-slide-indicator button:focus-visible {
-  background-color: var(--text-color);
+  background-color: white;
 }
 
 .carousel .carousel-navigation-buttons {
@@ -108,13 +109,15 @@
   margin: 0;
   border-radius: 50%;
   padding: 0;
-  background-color: rgb(19 19 19 / 25%);
+  background-color: rgb(255 255 255 / 15%);
   transition: background-color 0.2s;
+  color: white;
+  border-color: white;
 }
 
 .carousel .carousel-navigation-buttons button:hover,
 .carousel .carousel-navigation-buttons button:focus-visible {
-  background-color: rgb(19 19 19 / 75%);
+  background-color: rgb(255 255 255 / 30%);
 }
 
 .carousel .carousel-navigation-buttons button::after {
@@ -143,12 +146,6 @@
   }
 
   .carousel .carousel-slide .carousel-slide-content {
-    --slide-content-width: calc((100% - 184px) / 2);
-
-    margin: 92px;
-  }
-
-  .carousel .carousel-slide .carousel-slide-content[data-align='justify'] {
-    --slide-content-width: auto;
+    padding: 16px 48px;
   }
 }
