@@ -1,9 +1,9 @@
 @font-face {
-  font-family: Montserrat;
+  font-family: NotoSans;
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url("/styles/fonts/montserrat.woff2") format("woff2");
+  src: url("https://fonts.gstatic.com/s/notosans/v36/o-0IIpQlx3QUlC5A4PNr5TRA.woff2") format("woff2");
   unicode-range:
     U+0000-00FF,
     U+0131,
@@ -27,11 +27,11 @@
 }
 
 @font-face {
-  font-family: Montserrat;
-  font-style: italic;
-  font-weight: 100 900;
+  font-family: NotoSans;
+  font-style: normal;
+  font-weight: 700;
   font-display: swap;
-  src: url("/styles/fonts/montserrat-italic.woff2") format("woff2");
+  src: url("https://fonts.gstatic.com/s/notosans/v36/o-0NIpQlx3QUlC5A4PNjXhFVZNyB.woff2") format("woff2");
   unicode-range:
     U+0000-00FF,
     U+0131,
@@ -154,39 +154,45 @@
   --color-yellow-800: #373100;
   --color-yellow-900: #1e1b00;
 
+  /* Fresenius brand colors */
+  --color-fresenius-navy: #071b45;
+  --color-fresenius-blue: #0033a0;
+  --color-fresenius-light-blue: #e8f0fe;
+  --color-fresenius-red: #c03;
+
   /* named colors */
   --color-light-base: 255 255 255;
-  --color-dark-base: 0 0 0;
+  --color-dark-base: 7 27 69;
   --color-light: rgb(255 255 255);
-  --color-dark: rgb(0 0 0);
+  --color-dark: rgb(7 27 69);
   --color-text: light-dark(var(--color-dark), var(--color-light));
-  --color-link: light-dark(var(--color-gray-900), var(--color-gray-100));
-  --color-brand: var(--color-purple-500);
-  --color-accent: light-dark(var(--color-magenta-600), var(--color-magenta-500));
+  --color-link: light-dark(var(--color-fresenius-navy), var(--color-gray-100));
+  --color-brand: var(--color-fresenius-blue);
+  --color-accent: light-dark(var(--color-fresenius-blue), var(--color-fresenius-blue));
   --color-background: light-dark(var(--color-light), var(--color-dark));
   --color-shaded: light-dark(#f9f9f9, #111);
 
   /* fonts */
-  --font-family: montserrat, "Trebuchet MS", sans-serif;
+  --font-family: "NotoSans", sans-serif;
 
   /* headings */
-  --heading-font-size-xxl: 32.44px;
-  --heading-font-size-xl: 28.83px;
-  --heading-font-size-l: 25.63px;
-  --heading-font-size-m: 22.78px;
-  --heading-font-size-s: 20.25px;
+  --heading-font-size-xxl: 40px;
+  --heading-font-size-xl: 36px;
+  --heading-font-size-l: 28px;
+  --heading-font-size-m: 24px;
+  --heading-font-size-s: 20px;
   --heading-font-size-xs: 18px;
-  --heading-line-height: 1.15;
+  --heading-line-height: 1.2;
 
   /* body */
   --body-font-size-xxxl: 25px;
   --body-font-size-xxl: 22px;
   --body-font-size-xl: 20px;
   --body-font-size-l: 18px;
-  --body-font-size-m: 16px;
+  --body-font-size-m: 18px;
   --body-font-size-s: 14px;
   --body-font-size-xs: 12px;
-  --body-line-height: 1.6;
+  --body-line-height: 1.55;
 
   /* misc */
   --header-height: 64px;
@@ -374,6 +380,38 @@ main > div,
 .has-template,
 div[data-status] {
   display: none;
+}
+
+/* Fresenius dark section styling */
+.section.dark {
+  background-color: var(--color-fresenius-navy);
+  color: #fff;
+}
+
+.section.dark h2,
+.section.dark p {
+  color: #fff;
+}
+
+/* Hide metadata block rendering */
+.metadata {
+  display: none !important;
+}
+
+/* Hero CTA button styling */
+.hero a {
+  display: inline-block;
+  background-color: #fff;
+  color: var(--color-fresenius-navy);
+  padding: 10px 24px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 2px solid #fff;
+  transition: background-color 0.2s;
+}
+
+.hero a:hover {
+  background-color: rgb(255 255 255 / 85%);
 }
 
 aem-sidekick {

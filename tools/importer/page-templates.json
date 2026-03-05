@@ -1,0 +1,56 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": ["https://freseniusmedicalcare.com/en/"],
+      "description": "Fresenius Medical Care global homepage with hero banner, content cards, promotional CTAs, and stats carousel",
+      "blocks": [
+        {
+          "name": "section-hero",
+          "instances": [".fme-pageheading--primary"],
+          "section": "Hero banner section with background image"
+        },
+        {
+          "name": "hero",
+          "instances": ["#pageHeading", ".fme-pageheading--primary .cmp-teaser"]
+        },
+        {
+          "name": "section-cards",
+          "instances": [".fme-freseniuscontainer--container:has(.fme-pagelist--insights-hub)"],
+          "section": "Content cards grid section"
+        },
+        {
+          "name": "cards",
+          "instances": [".fme-pagelist--insights-hub"]
+        },
+        {
+          "name": "section-hcp-cta",
+          "instances": [".fme-freseniuscontainer--container:has(.fme-teaser--white-with-green-btn)"],
+          "section": "Healthcare Professionals CTA section with blue background"
+        },
+        {
+          "name": "hero",
+          "instances": [".fme-teaser--full-width-promo.fme-teaser--white-with-green-btn"]
+        },
+        {
+          "name": "section-patients-cta",
+          "instances": [".fme-freseniuscontainer--container:has(.fme-teaser--swap)"],
+          "section": "Patients and Families CTA section"
+        },
+        {
+          "name": "hero",
+          "instances": [".fme-teaser--full-width-promo.fme-teaser--swap"]
+        },
+        {
+          "name": "section-who-we-are",
+          "instances": [".fme-freseniuscontainer--promo-overlay"],
+          "section": "Who We Are section with stats carousel, dark background"
+        },
+        {
+          "name": "carousel",
+          "instances": [".fme-freseniuscontainer--promo-carousel .cmp-carousel"]
+        }
+      ]
+    }
+  ]
+}
